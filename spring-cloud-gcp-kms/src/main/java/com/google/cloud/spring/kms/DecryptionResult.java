@@ -12,14 +12,14 @@ public class DecryptionResult {
 		this.byteString = byteString;
 	}
 
+
 	public byte[] toByteArray() {
 		return byteString.toByteArray();
 	}
 
-	public String toBase64() {
-		byte[] bytes = byteString.toByteArray();
-		byte[] encoded = Base64.getEncoder().encode(bytes);
-		return new String(encoded);
+	public String toStringUtf8() {
+		return byteString.toStringUtf8();
 	}
+
 
 }

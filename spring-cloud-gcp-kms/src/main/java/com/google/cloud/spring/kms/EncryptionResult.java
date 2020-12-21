@@ -1,5 +1,7 @@
 package com.google.cloud.spring.kms;
 
+import java.util.Base64;
+
 import com.google.protobuf.ByteString;
 
 public class EncryptionResult {
@@ -14,8 +16,10 @@ public class EncryptionResult {
 		return byteString.toByteArray();
 	}
 
-	public String toStringUtf8() {
-		return byteString.toStringUtf8();
+	public String toBase64() {
+		byte[] bytes = byteString.toByteArray();
+		byte[] encoded = Base64.getEncoder().encode(bytes);
+		return new String(encoded);
 	}
 
 }
