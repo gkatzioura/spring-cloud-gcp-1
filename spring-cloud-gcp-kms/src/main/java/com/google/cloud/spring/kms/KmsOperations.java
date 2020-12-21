@@ -47,7 +47,7 @@ public interface KmsOperations {
 	 * @param text The text to encrypt
 	 * @return The encrypted bytes in Base64 encoding
 	 */
-	String encrypt(String cryptoKey, String text);
+	EncryptionResult encrypt(String cryptoKey, String text);
 
 	/**
 	 * Decrypt the text using the specified KMS URI string {@code cryptoKey}.
@@ -59,6 +59,6 @@ public interface KmsOperations {
 	 * @param encryptedText The encrypted bytes in Base64 encoding
 	 * @return The decrypted text
 	 */
-	String decrypt(String cryptoKey, String encryptedText);
+	DecryptionResult decrypt(String cryptoKey, String encryptedText);
 
 }
